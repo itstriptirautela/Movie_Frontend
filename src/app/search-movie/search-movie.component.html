@@ -1,0 +1,85 @@
+            <!-- <div class="header_container">-->
+              
+              <!-- <app-search-movie class="movie"></app-search-movie>  -->
+              <div class="navbar navbar-expand-sm navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand Hea" href="#">Movie Booking</a>
+                    
+                    <div  class="collapse navbar-collapse" id="navbarResponsive">
+                      <a class="navbar-brand home" routerLink="/movieslist">Home</a>
+                      
+                    </div>
+                    
+                     <div class="form-outline">
+                      <input type="search" class="form-control"  [(ngModel)]="searchText"  placeholder="Search Movie"/>
+                       <button type="button" class="btn btn-primary" (click)="filterMovie()">
+                         <i class="fa fa-search"></i>
+                       </button>
+                      </div>
+                    </div>
+                 </div>
+                <div class="container">
+                  <div class="card"  *ngFor= "let movie of filteredData |paginate:{
+                    itemsPerPage: tableSize,
+                    currentPage:page}; "> 
+                    
+                     <div class="card__header" > 
+                           
+                       <!-- <span class="tag tag-blue m-4">{{ book.category }}</span>  -->
+                     
+                      <img  [src]="'assets/'+movie.movieShow.MovieName +'.jpg'" alt="card__image" class="card__image" width="500" height="440" padding-top="10px"/>
+                    </div>
+                    <div class="card__body">
+                      <span class="tag tag-blue">Movie</span>
+                      <h4 >{{ movie.movieShow.MovieName }}</h4>
+                      <p>Theatre Name
+                        {{ movie.movieShow.TheatreName}}
+                        
+                      </p>
+                      <p> Tickets Available
+                        {{movie.TotalTicketsAllotted}}
+                      </p>
+                      
+            
+                    </div>
+                    <div class="card__footer">
+                      <button class="btn btn-primary" (click)="bookTicket(movie)">Book</button>&nbsp;
+              <button *ngIf="Role == 'Admin'" class="btn btn-danger" (click)="deleteMovie(movie.movieShow.MovieName,movie.movieShow.TheatreName)">Delete</button>&nbsp;
+              <button *ngIf="Role == 'Admin'" class="btn btn-primary" (click)="movieDetails(movie)">Details</button>
+                    </div>
+                  </div>
+                 <pagination-controls
+                  previousLabel="Prev"
+                  nextLabel="Next"
+                  (pageChange)="onTableDataChange($event)">
+              </pagination-controls>  
+              
+              </div>
+  <!-- <table class = "table table-striped">
+      <thead>
+          <tr>
+              <th>Movie Name</th>
+              <th>Theatre Name </th>
+              <th>Tickets Available</th>   
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor= "let movie of movies |paginate:{
+              itemsPerPage: tableSize,
+              currentPage:page};" >
+              <td>{{ movie.movieShow.movieName }} </td>
+              <td> {{ movie.movieShow.theatreName }} </td>
+              <td>{{movie.totalTicketsAllotted}}</td>
+              <td><button class="btn btn-primary" (click)="bookTicket(movie)">Book</button>
+              <button *ngIf="Role == 'Admin'" class="btn btn-danger" (click)="deleteMovie(movie.movieShow.movieName,movie.movieShow.theatreName)">Delete</button>
+              <button *ngIf="status" class="btn btn-primary" (click)="movieDetails(movie)">Details</button></td>
+              
+      </tr>
+      </tbody>
+  </table>
+  <div> -->
+  
+       
+  <!-- </div> -->
+  <!-- <mat-paginator #paginator [pageSizeOptions]="[2, 4, 6]" 
+  showFirstLastButtons></mat-paginator> -->

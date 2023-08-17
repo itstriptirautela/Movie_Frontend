@@ -1,0 +1,96 @@
+<div class="container-fluid">
+  
+  <div class="row no-gutter ">
+      <!-- The image half -->
+      <div class="col-md-6 d-none d-md-flex bg-image">
+        <div class="text-body">
+        <!-- <h1 class="text-lg-center tit">Book Store</h1>
+        <pre class="para">
+          “A great book should leave you with many experiences, and slightly 
+          exhausted at the end. You live several lives while reading.”
+        </pre> -->
+      </div>
+      </div>
+      
+
+
+      <!-- The content half -->
+      <div class="col-md-6  " >
+          <div class="login d-flex align-items-center py-5">
+            <div class="topleft">
+              <button id="btn1" type="button" class="btn btn m-1" routerLink="">Log in </button>
+              <button id="btn2" type="button" class="btn btn m-1" routerLink="/register"> Register</button>
+             </div>
+              <!-- Demo content-->
+              <div class="container">
+                  <div class="row">
+                      <div class="col-lg-10 col-xl-8 mx-auto">
+                        <h1 class="text-success h1 wel">Movie Booking App</h1>
+                        <p class="sign text-success">Sign to your Account</p>
+                        <br>
+                        
+                          <form class="form-signin"  #logincredential="ngForm"  (ngSubmit)="onSubmit()">
+                              <div class="form-group form-box inputiteam input-wrapperName">
+                                  
+                                  <input type="LoginId" name="LoginId" class="form-control p-md-2"  placeholder="LoginId" #LoginId="ngModel" [(ngModel)]="user.LoginId" required LoginId>
+                                  <div class="text-danger" *ngIf="!LoginId?.valid && (LoginId?.dirty || LoginId?.touched)">
+                                     *LoginId is Required
+                                 </div>
+                      </div>
+                              <br>
+                              <div class="form-group form-box inputiteam input-wrapperPassword">
+                               <input  type="password" name="password" class="form-control p-md-2"  autocomplete="off" placeholder="password" #password="ngModel" [(ngModel)]="user.password" required password>
+                               <div class="text-danger" *ngIf="!password?.valid && (password?.dirty || password?.touched)">
+                                *Password is Required
+                            </div>
+                                </div>
+                              <br>
+                                      <div class="d-flex justify-content-between align-items-center">
+                                        <!-- Checkbox -->
+                                        <div class="form-check mb-0">
+                                          <input class="form-check-input me-2" type="checkbox" value="" >
+                                        <label class="form-check-label align-items-center" for="Remember"> Remember me</label>
+                                        </div>
+                                        <a href="#!" class="text-body text-lg-center">Forgot password?</a>
+                                      </div>
+                                    <br>
+                                      <div class="d-grid">
+                                        <button type="submit" [disabled]="!logincredential.valid" class="btn btn-outline-success btn-block m-2"> Log In</button>
+                                      </div>
+                                    
+                                      <div class="m-7">
+                                     
+                                        <button id=btn3 type="button" class="btn btn-light btn-floating m-3">
+                                          <span id=icon class="fa fa-facebook-f"  ></span> Facebook</button>
+                                    
+                                          <button id=btn4 type="button" class="btn btn-light btn-floating m-2" >
+                                            <span id=icon class="fa fa-twitter"  ></span> Twitter</button>
+                                          
+                                       
+                                            <button id=btn5 type="button" class="btn btn-light btn-floating m-2" >
+                                              <span id=icon class="fa fa-google"  ></span> Google</button>
+                                         
+                                      
+                                    
+                                      
+                                      </div>
+                                      <p class="small fw-bold mt-2 pt-1 mb-0">
+                                        Don't have an account?
+                                        <a href="/register" class="link-success">Register here</a>
+                                      </p>
+                                    
+                                    </form>
+                                    <div class="alert alert-danger mt-3" *ngIf="errMsg.length > 0">
+                                      {{ errMsg }}
+                                    </div>
+                                    
+                         
+                      </div>
+                  </div>
+              </div><!-- End -->
+
+          </div>
+      </div><!-- End -->
+
+  </div>
+</div>

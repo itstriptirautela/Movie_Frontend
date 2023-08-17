@@ -1,0 +1,198 @@
+label {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  .card-container.card {
+    max-width: 400px !important;
+    padding: 40px 40px;
+  }
+  
+  .card {
+    background-color: #f7f7f7;
+    padding: 20px 25px 30px;
+    margin: 0 auto 25px;
+    margin-top: 50px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  }
+  
+  .profile-img-card {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+  }
+
+  .bdrop {
+    background-color: #bbbbbba2;
+    backdrop-filter: blur(1px);
+}
+
+.modal-backdrop {
+    /* bug fix - no overlay */    
+    display: none;    
+}
+.bg-container {
+    background-image: url("/assets/poster.jpg");
+    width:100%;
+    height:auto; 
+    border:5px solid red;
+    box-sizing:content-box
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Water+Brush&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bevan&display=swap');
+
+.login,
+.image {
+  min-height: 100vh;
+  
+
+}
+
+.bg-image {
+  background-image: url("/assets/front 2.jpg");
+  background-size: cover;
+  background-position: center center;
+  border-bottom-right-radius: 300px;
+  opacity: 0.9;
+  
+}
+.sign {
+  text-align: center;
+  align-items: center;
+}
+.wel {
+  text-align: center;
+}
+
+.input-wrapperPassword {
+  position: relative;
+}
+
+.input-wrapperPassword:before {
+  content: "\f023";
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  color: #459ce7;
+  font-size: 18px;
+  padding-right: 0.5em;
+  position: absolute;
+  top: 10px;
+  right: 0;
+}
+.input-wrapperPassword {
+  position: relative;
+}
+
+.input-wrapperPassword:before {
+  content: "\f023";
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  color: #010e06;
+  font-size: 18px;
+  padding-right: 0.2em;
+  position: absolute;
+  top: 10px;
+  right: 0;
+}
+.input-wrapperName {
+  position: relative;
+}
+
+.input-wrapperName:before {
+  content: "\f007";
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  color: #010e06;
+  font-size: 18px;
+  padding-right: 0.2em;
+  position: absolute;
+  top: 10px;
+  right: 0;
+}
+.tit {
+  position: absolute;
+  /* font-family: "Times New Roman "; */
+  font-family: 'Bevan', sans-serif;
+  /* font-size: 40px; */
+  font-size: 60px;
+  left:16%;
+  top: 350px;
+  color: rgb(231, 243, 243);
+  font-family: 'Water Brush', sans-serif;
+}
+#icon{
+  color: rgb(241, 241, 248);
+}
+.para {
+  position: absolute;
+  /* font-family: 'Water Brush', sans-serif; */
+   font-family: "Times New Roman ";
+  font-style: italic;
+  font-weight: bold;
+  font-size: 18px;
+  /* text-align: center; */
+  color: rgba(5, 5, 5, 0.87);
+  top: 56%;
+  left:70px;
+  /* font-family: 'Bevan', sans-serif; */
+  
+}
+#btn3{
+  background: linear-gradient(to right, blue 5%, rgb(71, 71, 49) 50%);
+ 
+ 
+}
+
+#btn4{
+  background: linear-gradient(to right, rgb(3, 221, 250) 5%, rgb(255, 255, 251) 50%);
+ 
+ 
+}
+#btn5{
+  background: linear-gradient(to right, rgb(247, 7, 7) 5%, rgb(255, 255, 251) 50%);
+ 
+ 
+}
+
+#btn1 {
+  border-bottom-right-radius: 100px;
+  border-top-right-radius: 100px;
+  background-color: rgb(219, 22, 22);
+  width: 8%;
+  position: absolute;
+  top: 8px;
+  left: 600px; 
+  height: 6%;
+  color: azure;
+}
+
+#btn2{
+  border-bottom-right-radius: 100px;
+  border-top-right-radius: 100px;
+  background-color: rgb(11, 2, 19);
+  width: 8%;
+  position: absolute;
+  top: 50px;
+  left: 600px;  
+  height: 6%;
+  color: azure;
+}
+.container-fluid{
+  background-color: rgb(205, 219, 219);
+}
