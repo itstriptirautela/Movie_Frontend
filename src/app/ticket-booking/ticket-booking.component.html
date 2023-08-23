@@ -3,21 +3,19 @@
 <div *ngIf="!status" class="col-md-12">
  
     <div class="card card-container  bdrop">
-      <div class="img__wrapper" *ngIf="(movie.TotalTicketsAllotted - movie.BookedTickets) == 0">
+
+      <div class="img__wrapper" *ngIf="((movie.TotalTicketsAllotted - movie.BookedTickets) == 0) || (movie.TotalTicketsAllotted - movie.BookedTickets) > 0 && (movie.TotalTicketsAllotted - movie.BookedTickets) <= 20">
         <img src="http://www.savoy-sharm.com/media-room/images/hi-res/king-bed-room-accommodation-savoy-luxury-5-stars-accommodation-sharm-el-sheikh.jpg" alt="" />
-        <a class="sold_out" href="">Sold out</a>
-        <img  [src]="'assets/'+movie.movieShow.MovieName +'.jpg'" alt="card__image" class="card__image"/>
+       
+        <a class="sold_out" *ngIf="(movie.TotalTicketsAllotted - movie.BookedTickets) > 0 && (movie.TotalTicketsAllotted - movie.BookedTickets) <= 20" href="">Book ASAP</a>
         
         </div>
-        <div class="img__wrapper" *ngIf="(movie.TotalTicketsAllotted - movie.BookedTickets) > 0 && (movie.TotalTicketsAllotted - movie.BookedTickets) <= 20">
-          <img src="http://www.savoy-sharm.com/media-room/images/hi-res/king-bed-room-accommodation-savoy-luxury-5-stars-accommodation-sharm-el-sheikh.jpg" alt="" />
-          <a class="sold_out" href="">Book Asap</a>
-          <img  [src]="'assets/'+movie.movieShow.MovieName +'.jpg'" alt="card__image" class="card__image"/>
-          </div>
-          <div *ngIf="(movie.TotalTicketsAllotted - movie.BookedTickets) > 20">
-          <img  [src]="'assets/'+movie.movieShow.MovieName +'.jpg'" alt="card__image" class="card__image"/>
+     
+        <div class="card__header" > 
+                           
+                      
+          <img  [src]="'assets/'+movie.movieShow.MovieName +'.jpg'" alt="card__image" class="card__image" width="500" height="440" padding-top="10px"/>
         </div>
-        
         <ul>
           <p><b>Movie Name : </b>{{movie.movieShow.MovieName}}</p>
           <p><b>Movie Theatre : </b>{{movie.movieShow.TheatreName}}</p>
@@ -64,14 +62,7 @@
           <button class="btn btn-primary btn-block" (click)="booking()">
             Book
           </button>&nbsp;
-          <!-- <ng-container *ngIf="popUpComponent" >
-            <div class="popup-container">
-              <div class="popup-message">
-              <p>Booked sucessfully</p>
-              <button class="alert" routerLink="/movieslist" (click)="closePopup()">Ok</button>
-              </div>
-            </div>
-          </ng-container> -->
+         
           <button class="btn btn-danger btn-block" (click)="cancel()">
             Cancel
           </button><br>

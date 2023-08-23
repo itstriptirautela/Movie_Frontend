@@ -24,4 +24,8 @@ constructor(private service:BackendService,private router: Router) { }
   login() {
     return this.isLoggedIn;
   }
+  search(){
+    this.service.status=true
+    this.router.navigate(['search'])
+  }
 }

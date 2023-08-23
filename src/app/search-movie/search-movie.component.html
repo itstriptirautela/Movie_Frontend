@@ -1,21 +1,22 @@
-            <!-- <div class="header_container">-->
-              
-              <!-- <app-search-movie class="movie"></app-search-movie>  -->
+            
               <div class="navbar navbar-expand-sm navbar-dark bg-dark">
                 <div class="container-fluid">
                     <a class="navbar-brand Hea" href="#">Movie Booking</a>
                     
                     <div  class="collapse navbar-collapse" id="navbarResponsive">
                       <a class="navbar-brand home" routerLink="/movieslist">Home</a>
+                      <a class="navbar-brand home" routerLink="/Home">About</a>
                       
                     </div>
                     
                      <div class="form-outline">
-                      <input type="search" class="form-control"  [(ngModel)]="searchText"  placeholder="Search Movie"/>
+                      <input type="search" class="form-control"  [(ngModel)]="searchText"  (input)="filterMovie()" placeholder="Search Movie"/>
                        <button type="button" class="btn btn-primary" (click)="filterMovie()">
                          <i class="fa fa-search"></i>
                        </button>
                       </div>
+                      
+                      
                     </div>
                  </div>
                 <div class="container">
@@ -44,17 +45,22 @@
                     </div>
                     <div class="card__footer">
                       <button class="btn btn-primary" (click)="bookTicket(movie)">Book</button>&nbsp;
-              <button *ngIf="Role == 'Admin'" class="btn btn-danger" (click)="deleteMovie(movie.movieShow.MovieName,movie.movieShow.TheatreName)">Delete</button>&nbsp;
+              <button *ngIf="Role == 'Admin'" class="btn btn-danger" (click)="deleteMovie(movie.movieShow.MovieName)">Delete</button>&nbsp;
               <button *ngIf="Role == 'Admin'" class="btn btn-primary" (click)="movieDetails(movie)">Details</button>
                     </div>
                   </div>
-                 <pagination-controls
-                  previousLabel="Prev"
-                  nextLabel="Next"
-                  (pageChange)="onTableDataChange($event)">
-              </pagination-controls>  
+                
               
               </div>
+              <div *ngIf="filteredData.length==0" class="alert"> 
+                {{noDataMessage}}
+              </div>
+              <pagination-controls *ngIf="filteredData.length>0"
+              previousLabel="Prev"
+              nextLabel="Next"
+              (pageChange)="onTableDataChange($event)">
+          </pagination-controls>  
+             
   <!-- <table class = "table table-striped">
       <thead>
           <tr>

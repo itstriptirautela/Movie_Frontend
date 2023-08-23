@@ -12,13 +12,14 @@ import { TicketBookingComponent } from './ticket-booking/ticket-booking.componen
 
 const routes: Routes = [{path:'',component:LoginComponent},
 {path:'register', component:RegisteruserComponent},
-{path:'movieslist', component: MovieslistComponent},
+{path:'movieslist', component: MovieslistComponent,canActivate: [AuthguardService]},
 {path :'forgotpassword',component:ForgotpasswordComponent},
-{path:'search', component:SearchMovieComponent},
-{path:'bookticket', component:TicketBookingComponent},
-{path:'moviedetails',component:MoviesDetailsComponent},
+{path:'search', component:SearchMovieComponent,canActivate: [AuthguardService]},
+{path:'bookticket', component:TicketBookingComponent,canActivate: [AuthguardService]},
+{path:'moviedetails',component:MoviesDetailsComponent,canActivate: [AuthguardService]},
 ];
-//canActivate: [AuthguardService]
+// canActivate: [AuthguardService]
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

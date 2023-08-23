@@ -16,7 +16,6 @@ import { MoviesDetailsComponent } from './movies-details/movies-details.componen
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +37,8 @@ import { HeaderComponent } from './header/header.component';
     ReactiveFormsModule,
     NgxPaginationModule,
     BrowserAnimationsModule,
-    MaterialModule,
+    MaterialModule
+   
   ],
   providers: [],
   bootstrap: [AppComponent]

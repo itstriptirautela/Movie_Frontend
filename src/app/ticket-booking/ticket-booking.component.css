@@ -33,13 +33,11 @@ label {
   body {background: #333}
 .img__wrapper{
   width: 500px;
-  height: 300px;
+  height: 0px;
   position:relative;
-  overflow:hidden;
+  /* overflow:hidden; */
 }
-.img__wrapper img{
-  width: 100%;
-}
+
 .sold_out {
     top: 2em;
     left: -4em;
@@ -71,9 +69,9 @@ label {
     -webkit-transform: scale(0.7);
     border: 2px rgba(255,255,255,0.7) dashed;
 }
-.card__image {
-  max-width: 55%;
-  max-height: 100%;
+
+img {
+  max-width: 100%;
   display: block;
   object-fit: cover;
 }

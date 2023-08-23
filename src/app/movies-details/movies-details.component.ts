@@ -16,15 +16,17 @@ export class MoviesDetailsComponent implements OnInit {
   status:boolean=this.aservice.adminStatus
  
   ngOnInit(): void {
-    this.movieDetails();
+    // this.movieDetails();
+    this.aservice.status=true;
+    console.log(this.movie)
   }
-  movieDetails(){
-    this.service.movieDetails(this.movie.movieShow.MovieName,this.movie.movieShow.TheatreName).subscribe(data=>{
-      this.output=data
-      this.totalSeats=this.output+this.movie.TotalTicketsAllotted
+  // movieDetails(){
+  //   this.service.movieDetails(this.movie.movieShow.MovieName,this.movie.movieShow.TheatreName).subscribe(data=>{
+  //     this.output=data
+  //     this.totalSeats=this.output+this.movie.TotalTicketsAllotted
 
-    })
+  //   })
       
-  }
+  // }
 
 }

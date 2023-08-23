@@ -13,7 +13,7 @@ export class MovieslistComponent implements OnInit {
   message!:string
   name:string=''
   page: number=1;
-  tableSize:number=10;
+  tableSize:number=5;
   movies:Movie[]=[];
   Role: string | null = '';
   size!:number
@@ -34,6 +34,7 @@ searchText:any;
     this.service.getAllMovies().subscribe(data=>{
       this.movies=data
       this.filteredData=data;
+      this.aservice.status=true;
       console.log(this.movies);
     })
   }
@@ -80,19 +81,22 @@ searchText:any;
   }
   bookTicket(movie:Movie){
     this.service.movie=movie
+    this.aservice.status=true;
     this.route.navigate(['bookticket'])
   }
 
   deleteMovie(movieName:string, theatreName:string){
-    this.service.deleteMovie(movieName,theatreName).subscribe(data=>{
+    this.service.deleteMovie(movieName).subscribe(data=>{
       this.message=data
       alert(data)
       this.aservice.adminStatus=true
+      this.aservice.status=true;
       this.getMoviesList()
     })
   }
   movieDetails(movie:Movie){
     this.service.movie=movie
+    this.aservice.status=true;
     this.route.navigate(['moviedetails'])
   }
   

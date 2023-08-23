@@ -13,12 +13,13 @@ export class SearchMovieComponent implements OnInit {
   message!:string
   name:string=''
   page: number=1;
-  tableSize:number=10;
+  tableSize:number=5;
   movies:Movie[]=[];
   Role: string | null = '';
   size!:number
   home:boolean=false
   filteredData:any[];
+  noDataMessage: string;
 searchText:any; 
   //movies:any[]=[];
   constructor(private service:MoviesService, private route:Router, private aservice: BackendService) {
@@ -34,6 +35,7 @@ searchText:any;
     this.service.getAllMovies().subscribe(data=>{
       this.movies=data
       this.filteredData=data;
+      this.aservice.status=true;
       console.log(this.movies);
     })
   }
@@ -49,6 +51,13 @@ searchText:any;
       } 
       else {
         this.filteredData = this.movies;
+        }
+        if(this.filteredData.length==0)
+        {
+          this.noDataMessage='No Data Found';
+        }
+        else {
+          this.noDataMessage='';
         }
   }
   // getMovie(){
@@ -83,8 +92,8 @@ searchText:any;
     this.route.navigate(['bookticket'])
   }
 
-  deleteMovie(movieName:string, theatreName:string){
-    this.service.deleteMovie(movieName,theatreName).subscribe(data=>{
+  deleteMovie(movieName:string){
+    this.service.deleteMovie(movieName).subscribe(data=>{
       this.message=data
       alert(data)
       this.aservice.adminStatus=true

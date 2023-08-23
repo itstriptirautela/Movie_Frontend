@@ -29,12 +29,13 @@ values:any
     password: '',
   };
   onSubmit(){
-   
+  
     this.service.authenticate(this.user).subscribe(
       (res) => {
           this.service.loginAgent(res, this.user.LoginId);
           console.warn(res);
           this.result = res;
+          this.service.status=true;
         },
         (err) => {
           console.log(err);
