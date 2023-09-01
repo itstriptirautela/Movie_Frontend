@@ -8,6 +8,7 @@ import { MovieslistComponent } from './movieslist/movieslist.component';
 import { RegisteruserComponent } from './registeruser/registeruser.component';
 import { SearchMovieComponent } from './search-movie/search-movie.component';
 import { TicketBookingComponent } from './ticket-booking/ticket-booking.component';
+import { TicketBookingDetailsComponent } from './ticket-booking-details/ticket-booking-details.component';
 
 
 const routes: Routes = [{path:'',component:LoginComponent},
@@ -17,6 +18,7 @@ const routes: Routes = [{path:'',component:LoginComponent},
 {path:'search', component:SearchMovieComponent,canActivate: [AuthguardService]},
 {path:'bookticket', component:TicketBookingComponent,canActivate: [AuthguardService]},
 {path:'moviedetails',component:MoviesDetailsComponent,canActivate: [AuthguardService]},
+{path:'ticketBookingDetails',component:TicketBookingDetailsComponent,canActivate: [AuthguardService]},
 ];
 // canActivate: [AuthguardService]
 

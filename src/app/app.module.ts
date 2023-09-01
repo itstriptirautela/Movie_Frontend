@@ -15,6 +15,7 @@ import { TicketBookingComponent } from './ticket-booking/ticket-booking.componen
 import { MoviesDetailsComponent } from './movies-details/movies-details.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
+import { TicketBookingDetailsComponent } from './ticket-booking-details/ticket-booking-details.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HeaderComponent } from './header/header.component';
     SearchMovieComponent,
     TicketBookingComponent,
     MoviesDetailsComponent,
-    HeaderComponent
+    HeaderComponent,
+    TicketBookingDetailsComponent
    
   ],
   imports: [

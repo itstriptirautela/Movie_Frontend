@@ -5,6 +5,7 @@ import { MoviesService } from '../movies.service';
 import { TicketBookingService } from '../ticket-booking.service';
 import { Tickets } from '../Tickets';
 import{MatDialog, MatDialogRef} from '@angular/material/dialog';
+import { BackendService } from '../backend.service';
 
 
 
@@ -31,7 +32,7 @@ export class TicketBookingComponent implements OnInit {
   closePopup(){
     this.popUpComponent=false;
   }
-  constructor(private dialog:MatDialog,private mservice: MoviesService, private service: TicketBookingService, private route: Router) { }
+  constructor(private dialog:MatDialog,private mservice: MoviesService, private bservice: BackendService,private service: TicketBookingService, private route: Router) { }
   movie: Movie = this.mservice.movie
   booking() {
     if (this.form.noOfTickets != '') {
@@ -41,19 +42,23 @@ export class TicketBookingComponent implements OnInit {
       this.movies=this.movie.movieShow.MovieName;
       this.theater= this.movie.movieShow.TheatreName;
       console.log(this.form)
+      localStorage.setItem('ticketBookingDetails', JSON.stringify(this.form));
+      localStorage.setItem('movieName', JSON.stringify(this.form));
      this.service.bookTickets(this.movies,this.theater,this.form).subscribe(datas => {
       this.message = datas
       this.status = true
       console.log(datas)
-      this.openPopup();
+      // this.openPopup();
         
       })
-      alert("Ticket booked successfully");
-      this.route.navigate(['/movieslist']);
+      // alert("Ticket booked successfully");
+      this.bservice.status=true;
+      this.route.navigate(['/ticketBookingDetails']);
     }
   }
 
   cancel() {
+    this.bservice.status=true;
     this.route.navigate(['movieslist'])
   }
   ngOnInit(): void {

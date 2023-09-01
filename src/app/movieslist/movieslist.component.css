@@ -222,3 +222,57 @@
     -webkit-transform: scale(0.7);
     border: 2px rgba(255,255,255,0.7) dashed;
 }
+.home {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.home {
+  width:500px; 
+  text-align:center; 
+  /* float:center;  */
+  padding-left: 400px;
+  background-color:#f7f4f4; 
+  padding-top:20px; 
+  padding-bottom:10px;
+  position:relative;
+}
+/* .bg-image{
+  width: 50%;
+  height: 20%;
+  margin-left: 25%;
+  text-align: center;
+  margin-top: 2%;
+  box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.1);
+  border-radius: 1em;
+} */
+/* .top{
+  padding: 0.20em 0.50em;
+  border-radius: 1em;
+  font-size: 0.75rem;
+  background: #56ccf2;
+  background: linear-gradient(to bottom, #2f80ed, #56ccf2);
+  color: #fafafa;
+} */
+.top-img{
+padding-left: 250px;
+padding-top:230px;
+}
+
+.top {
+  width:120px;
+   color:#FFFFFF; 
+   height:25px;
+   padding:3px; 
+   position:absolute;
+   top:25px; 
+   left:402px;
+   border-radius: 1em;
+   font-size: 0.75rem;
+   background: #56ccf2;
+   background: linear-gradient(to bottom, #2f80ed, #56ccf2);
+ }
+.bg-image{
+      max-width:500px; 
+      border:0px;
+      margin:auto;
+ }

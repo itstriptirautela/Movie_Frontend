@@ -1,0 +1,49 @@
+<app-header></app-header>
+<div class="container">
+ <!-- <div class="row">
+    <div class="col-md-10"> -->
+<div class="left-side">
+<h1>The Kerala Story</h1>
+<h2>English,Hindi</h2>
+<p><b> Seats : </b>{{tickets.seatNumber}}</p>
+<p><b>2023-08-23 | 4:30pm</b></p>
+
+</div>
+
+<div class="right-side">
+  <img  [src]="'/assets/chairs.jpg'" alt="card__image" class="card__image" width="200" height="170" />
+    <p><b> Total Seats: {{tickets.numberOfTickets}} </b></p>
+
+</div>
+
+</div>
+<mat-divider class="divider"> </mat-divider>
+
+<div class="lower-header">
+<b><input style=" border:none; border-color: rgb(21, 23, 21); text-align:center;" type="text"  placeholder="Have a Promo Code?"  /></b>
+
+</div>
+
+<h3 style="padding-left: 20px;"><b>PAYMENT DETAILS</b></h3>
+<div class="bottom">
+<div class="bottom-left">
+
+<p><b> Sub Total : </b> </p>
+<p><b> Internet handling fee : </b> </p>
+<p><b> Base Amount : </b> </p>
+<p><b> Intergrated GST : </b> </p>
+</div>
+<div class="bottom-right">
+<p><b>&#x20b9;{{tickets.numberOfTickets*200}}</b></p>
+<p><b>&#x20b9;70</b></p>
+<p><b>&#x20b9;60</b></p>
+<p><b>&#x20b9;10</b></p>
+</div>
+</div>
+<div class="form-group">
+    <button class="btn btn-primary btn-block"  (click)="book()">
+      Book &#x20b9;{{tickets.numberOfTickets*200+140}}
+    </button>&nbsp;
+   
+    <button class="btn btn-danger btn-block" (click)="cancel()">Cancel</button><br>
+  </div>
