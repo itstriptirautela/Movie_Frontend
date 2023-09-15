@@ -23,16 +23,19 @@
              <div class=mat-heart>
              <i id=icon2 class="fa fa-heart" aria-hidden="true"></i>
             </div>
+            <button id="btn1" *ngIf="isLoggedIn" class="btn btn-danger btn-block" routerLinkActive="active" routerLink="">
+              Logout
+              </button>
+              <span class="name"> {{firstName}}{{lastName}}</span>
         </form>
         
-        <button *ngIf="isLoggedIn" class="btn btn-danger btn-block" routerLinkActive="active" routerLink="">
-        Logout
-        </button>
+      
         <!-- <button *ngIf="isLoggedIn"  class="btn-floating btn-outline-success">
           <a class="nav-link" routerLinkActive="active" routerLink="" >Logout</a>
        </button> -->
-       
-       <a id="icon1" class="fa fa-user" aria-hidden="true" routerLink="/UpdateProfile"></a>
+      
+       <span class="name"><b>{{firstName}}{{lastName}}</b></span>
+       <!-- <a id="icon1" class="fa fa-user" aria-hidden="true" routerLink="/UpdateProfile"></a> -->
     </div>
     
   

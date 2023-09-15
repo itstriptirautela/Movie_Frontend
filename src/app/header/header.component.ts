@@ -11,12 +11,22 @@ export class HeaderComponent implements OnInit {
   title = 'moviebookingapp';
   status:boolean=false
   name:string=''
-  
+  firstName:any;
+  lastName:any;
 constructor(private service:BackendService,private router: Router) { }
   isLoggedIn = this.service.isLoggedIn;
 
   ngOnInit(): void {
+    this.firstName= localStorage.getItem('firstName');
+    this.lastName= localStorage.getItem('lastName');
+   
+    
   }
+ 
+
+  // firstName = JSON.parse(localStorage.getItem('firstName'));
+  // lastName= JSON.parse(localStorage.getItem('lastName'));
+  
 
   logout() {
     this.service.Logout();

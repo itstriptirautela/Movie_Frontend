@@ -47,13 +47,14 @@ export class TicketBookingComponent implements OnInit {
      this.service.bookTickets(this.movies,this.theater,this.form).subscribe(datas => {
       this.message = datas
       this.status = true
+      // this.bservice.status=true;
       console.log(datas)
-      // this.openPopup();
+      //  this.openPopup();
         
       })
-      // alert("Ticket booked successfully");
-      this.bservice.status=true;
-      this.route.navigate(['/ticketBookingDetails']);
+       alert("Ticket booked successfully");
+       this.bservice.status=true;
+     this.route.navigate(['/ticketBookingDetails']);
     }
   }
 

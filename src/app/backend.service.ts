@@ -24,7 +24,12 @@ export class BackendService {
     localStorage.setItem('Authorization', res.token);
     console.log(res.token);
     localStorage.setItem('Role', res.role);
+    localStorage.setItem('firstName', res.firstName);
+    localStorage.setItem('lastName', res.lastName);
+    // localStorage.setItem('UserObj',JSON.stringify(res)); 
     console.log(res.role);
+    
+    
     // localStorage.setItem('LoginId', res.LoginId);
     // localStorage.setItem('UserEmail', res.email);
    
@@ -36,10 +41,18 @@ export class BackendService {
 authenticate(data:any):Observable<any>{
 console.log(data)
 return this.httpClient.post<any>(this.url,data);
+// .pipe(
+//   map((response:any)=>{
+//     console.log(response)
+//     localStorage.setItem('UserObj',JSON.stringify(response)); 
+
+//   })
+//)
 
 }
 getRole() {
   if (localStorage.getItem('Role')) {
+   
     return localStorage.getItem('Role');
   }
   return 'NotLoggedIN';

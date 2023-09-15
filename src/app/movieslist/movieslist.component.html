@@ -37,8 +37,8 @@
             
                     </div>
                     <div class="card__footer">
-                      <button class="btn btn-primary" [disabled]="(movie.TotalTicketsAllotted - movie.BookedTickets) == 0"(click)="bookTicket(movie)">Book</button>&nbsp;
-                      
+                      <button class="btn btn-primary" (click)="bookTicket(movie)">Book</button>&nbsp;
+                      <!-- [disabled]="(movie.TotalTicketsAllotted - movie.BookedTickets) == 0" -->
               <button *ngIf="Role == 'Admin'" class="btn btn-danger" (click)="deleteMovie(movie.movieShow.MovieName,movie.movieShow.TheatreName)">Delete</button>&nbsp;
               <button *ngIf="Role == 'Admin'" class="btn btn-primary" (click)="movieDetails(movie)">Details</button>
                     </div>

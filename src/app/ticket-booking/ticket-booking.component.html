@@ -62,7 +62,15 @@
           <button class="btn btn-primary btn-block" (click)="booking()">
             Continue for Payment
           </button>&nbsp;
-         
+          <!-- <ng-container *ngIf="popUpComponent">
+            <div class="popup-container">
+              <div class="popup-message">
+                <p>Booked Successfully</p>
+                <button routerLink="/ticketBookingDetails" class="hovereffect popup-submit" (click)="closePopup()">Ok</button>
+              </div>
+            </div>
+          </ng-container>
+          -->
           <button class="btn btn-danger btn-block" (click)="cancel()">
             Cancel
           </button><br>
