@@ -13,7 +13,7 @@ export class MoviesService {
   movie!:Movie
   movieName:string=''
   //private url='http://localhost:8080/api/v1.0/moviebooking';
-  private url= 'https://localhost:7042/api/Movie'
+  private url= 'https://movieapibackend.azurewebsites.net/api/Movie'
   constructor(private httpClient:HttpClient, private auth:AuthServiceService) { }
   private getHeadersWithAuthorization(): HttpHeaders {
     const token = this.auth.getToken();
@@ -23,7 +23,7 @@ export class MoviesService {
 
   getAllMovies():Observable<Movie[]>{
     
-    return this.httpClient.get<Movie[]>(this.url+'/AllMovie')
+    return this.httpClient.get<Movie[]>('https://movieapibackend.azurewebsites.net/api/Movie/AllMovie')
 
   }
   getMovies(movieName:string):Observable<Movie[]>{

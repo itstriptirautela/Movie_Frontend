@@ -16,7 +16,7 @@ export class BackendService {
   user!:User;
   private users: any;
   //private url='http://localhost:8080/api/v1.0/moviebooking';
-  private url= 'https://localhost:7042/api/User';
+  private url= 'https://movieapibackend.azurewebsites.net/api/User';
   token = localStorage.getItem('Authorization');
   isLoggedIn = this.token == null || this.token == '' ? false : true;
   constructor(private httpClient:HttpClient, private auth:AuthServiceService, private router: Router) { }
@@ -40,6 +40,7 @@ export class BackendService {
   }
 authenticate(data:any):Observable<any>{
 console.log(data)
+
 return this.httpClient.post<any>(this.url,data);
 // .pipe(
 //   map((response:any)=>{

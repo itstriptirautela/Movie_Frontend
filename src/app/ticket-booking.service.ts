@@ -9,7 +9,7 @@ import { Tickets } from './Tickets';
 export class TicketBookingService {
   
   //https://localhost:7042/api/Ticket?movieName=Bhaubali&theaterName=Inox
-  private url='https://localhost:7042/api/Ticket?';
+  private url='https://movieapibackend.azurewebsites.net/api/Ticket?';
   constructor(private httpClient:HttpClient) { }
   bookTickets(movieName:string,theaterName:string,data:any){
     //const urls='${this.url}?movieName=${movieName}&theaterName=${theaterName}';
